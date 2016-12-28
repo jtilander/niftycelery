@@ -1,11 +1,11 @@
-FROM python:3.5-slim
+FROM python:2.7-slim
 
 RUN groupadd user && useradd --create-home --home-dir /app -g user user
 WORKDIR /app
 
 RUN pip install redis
 
-ENV CELERY_VERSION 4.0.2
+ENV CELERY_VERSION 3.1.25
 
 RUN pip install celery=="$CELERY_VERSION"
 
